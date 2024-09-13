@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from 'react';
 import LandingPage from './pages/LandingPage/index.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from './pages/Contact/index.js';
@@ -7,6 +7,7 @@ import NotFoundPage from './pages/NotFoundPage/index.js';
 import Experience from './pages/Experience/index.js';
 import AboutMe from './pages/AboutMe/index.js';
 import Header from './components/header/Header.js';
+import IndexWrapper from './indexWrapper.js';
 
 
 export default function App() {
@@ -27,5 +28,10 @@ export default function App() {
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App/>);
+root.render(
+  <React.StrictMode>
+    <IndexWrapper />
+    <App/>
+  </React.StrictMode>
+);
 

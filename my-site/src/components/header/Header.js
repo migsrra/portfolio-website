@@ -1,18 +1,24 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import HeaderWrapper from "./styles/HeaderWrapper";
 
 const Header = () => {
-  return(
+  return (
     <HeaderWrapper>
-      <nav>
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to="/experience">Experience</Link></li>
-          <li><Link to="/aboutme">About Me</Link>"</li>
-          <li><Link to="/contact">Contact</Link></li>
+      <nav className="header">
+        <NavLink to="/">Home</NavLink>
+        <ul className="nav_links">
+          <li>
+            <NavLink to="/experience">Experience</NavLink>
+          </li>
+          <li>
+            <NavLink to="/aboutme">About Me</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
         </ul>
       </nav>
-      <Outlet />  
+      <Outlet />
     </HeaderWrapper>
   );
 };
