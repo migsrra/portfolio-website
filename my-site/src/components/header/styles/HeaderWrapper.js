@@ -3,20 +3,19 @@ import Constants from "../../../utils/constants";
 
 const HeaderWrapper = styled.header`
   .header{
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Normal';
     font-weight: normal;
     font-weight: 500;
     font-size: 16px;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
+        
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 15px;
 
     a {
+      color: ${Constants.textColor};
       transition: all 0.3s ease 0s;
     }
     a:hover{
