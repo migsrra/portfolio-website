@@ -1,4 +1,4 @@
-const Experiences = {
+const Content = {
   "experience": [
     {
       "title": "Software Engineer",
@@ -23,3 +23,5 @@ const Experiences = {
     }
   ]
 }
+
+export default Content;

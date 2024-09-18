@@ -6,7 +6,7 @@ import Contact from './pages/Contact/index.js';
 import NotFoundPage from './pages/NotFoundPage/index.js';
 import Experience from './pages/Experience/index.js';
 import AboutMe from './pages/AboutMe/index.js';
-import Header from './components/header/index.js';
+import Header from './components/Header/index.js';
 import IndexWrapper from './indexWrapper.js';
 
 
