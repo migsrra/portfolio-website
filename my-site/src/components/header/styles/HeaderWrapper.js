@@ -15,7 +15,7 @@ const HeaderWrapper = styled.header`
     padding: 15px;
 
     a {
-      color: ${Constants.textColor};
+      color: ${Constants.headerTextColor};
       transition: all 0.3s ease 0s;
     }
     a:hover{

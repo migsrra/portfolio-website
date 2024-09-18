@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Constants from "../../../utils/constants";
 
 const LandingPageWrapper = styled.div`
-  color: ${Constants.homeTextColor};
+  color: ${Constants.textColor};
   font-family: "Roboto Light";
   font-weight: normal;
   font-style: normal;
@@ -25,7 +25,7 @@ const LandingPageWrapper = styled.div`
 
   button {
     display: inline-block;
-    color: ${Constants.homeTextColor};
+    color: ${Constants.textColor};
     font-size: 16px;
     font-family: "Roboto Normal";
     font-weight: normal;
@@ -38,7 +38,7 @@ const LandingPageWrapper = styled.div`
     text-decoration: none;
     background-color: ${Constants.buttonColor};
     border-radius: 10px;
-    box-shadow: 0 3px 4px ${Constants.textColor};
+    box-shadow: 0 3px 4px ${Constants.headerTextColor};
     transition: all 0.1s;
     cursor: pointer;
 
@@ -67,7 +67,7 @@ const LandingPageWrapper = styled.div`
   }
   button:active {
     transform: translateY(2px);
-    box-shadow: 0 0px ${Constants.textColor};
+    box-shadow: 0 0px ${Constants.headerTextColor};
   }
 `;
 export default LandingPageWrapper;
