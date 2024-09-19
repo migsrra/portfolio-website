@@ -8,7 +8,7 @@ const Experience = () => {
       <h1>Experience</h1>
       <h3>Here, you'll find all sorts of information about my experience as a software engineer.</h3>
       <div className = "carousel-wrapper">
-        <p>Work and Clubs</p>
+        <h2>Work and Clubs</h2>
         <Carousel contentArray={Content.experience}/>
       </div>
     </ExperienceWrapper> 

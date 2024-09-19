@@ -12,26 +12,26 @@ const Carousel = ({contentArray}) => {
     let contentArrLength = contentArray.length;
     if (direction === "left") {
       if (rightIndex === contentArrLength - 1) {
-        setCenterIndex(centerIndex + 1);
-        setLeftIndex(leftIndex + 1);
+        setCenterIndex(rightIndex);
+        setLeftIndex(centerIndex);
         setRightIndex(0);
       }
       else{
-        setCenterIndex(centerIndex + 1);
-        setLeftIndex(leftIndex + 1);
+        setCenterIndex(rightIndex);
+        setLeftIndex(centerIndex);
         setRightIndex(rightIndex + 1);
       }
     } 
     else {
       if (leftIndex === 0) {
-        setCenterIndex(centerIndex - 1);
+        setCenterIndex(leftIndex);
         setLeftIndex(contentArrLength - 1);
-        setRightIndex(rightIndex - 1);
+        setRightIndex(centerIndex);
       }
       else{
-        setCenterIndex(centerIndex - 1);
+        setCenterIndex(leftIndex);
         setLeftIndex(leftIndex - 1);
-        setRightIndex(rightIndex - 1);
+        setRightIndex(centerIndex);
       }
     }
   }
@@ -39,9 +39,11 @@ const Carousel = ({contentArray}) => {
   return (
     <CarouselWrapper>
       <CycleArrow direction = {"left"} onClick = {() => triggerCycle("left")}/>
-      <SideItem content = {contentArray[leftIndex]}/>
-      <CenterItem content = {contentArray[centerIndex]} />
-      <SideItem content = {contentArray[rightIndex]}/>
+      <div className="content-blocks">
+        <SideItem content = {contentArray[leftIndex]}/>
+        <CenterItem content = {contentArray[centerIndex]} />
+        <SideItem content = {contentArray[rightIndex]}/>
+      </div>
       <CycleArrow direction={"right"} onClick = {() => triggerCycle("right")}/>
     </CarouselWrapper>
   );
