@@ -6,13 +6,19 @@ const CarouselWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  gap: 0.5vw;
+  gap: 8px;
+  margin-top: 10px;
+  user-select: none;
+  width: 500px;
+  height: 200px;
   .content-blocks {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 7vw;
+    justify-content: space-between;
+    //gap: 100px;
   }
 `
 export default CarouselWrapper;

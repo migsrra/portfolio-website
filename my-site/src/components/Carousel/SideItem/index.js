@@ -1,9 +1,10 @@
 import SideItemWrapper from "./styles/SideItemWrapper";
 
+
 const SideItem = ({content}) => {
   return (
     <SideItemWrapper>
-      <p>{content.company}</p>
+      <img src={require("../../../resources/" + content.logoLocation)} draggable="false" height = "50px" alt="logo"/>
     </SideItemWrapper>
   );
 }

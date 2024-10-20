@@ -3,10 +3,17 @@ import SideItem from "./SideItem";
 import CenterItem from "./CenterItem";
 import CycleArrow from "./CycleArrow";
 import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
 const Carousel = ({contentArray}) => {
   const [leftIndex, setLeftIndex] = useState(0);
   const [centerIndex, setCenterIndex] = useState(1); //this will be the initial center item
   const [rightIndex, setRightIndex] = useState(2);
+
+  const handleSwipe = useSwipeable({
+    onSwipedLeft: () => triggerCycle("left"),
+    onSwipedRight: () => triggerCycle("right"),
+    trackMouse: true
+  });
 
   const triggerCycle = (direction) => {
     let contentArrLength = contentArray.length;
@@ -37,7 +44,7 @@ const Carousel = ({contentArray}) => {
   }
 
   return (
-    <CarouselWrapper>
+    <CarouselWrapper {...handleSwipe}>
       <CycleArrow direction = {"left"} onClick = {() => triggerCycle("left")}/>
       <div className="content-blocks">
         <SideItem content = {contentArray[leftIndex]}/>
