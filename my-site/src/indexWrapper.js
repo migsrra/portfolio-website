@@ -8,6 +8,7 @@ import RobotoSlabLightTtf from "./fonts/RobotoSlab-Light.ttf";
 import Constants from "./utils/constants";
 
 export default createGlobalStyle`
+
   @font-face {
     font-family: 'PTSerif';
     font-weight: normal;

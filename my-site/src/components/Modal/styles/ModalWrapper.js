@@ -31,6 +31,19 @@ const ModalWrapper = styled.div`
     border-radius: 3px;
     max-width: 600px;
     min-width: 300px;
+
+    h2{
+      font-weight: bold;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    h3{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h4{
+      margin-top: 0;
+    }
   }
 
   .close-modal {

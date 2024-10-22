@@ -59,17 +59,17 @@ const Carousel = ({contentArray}) => {
 
   return (
     <CarouselWrapper {...handleSwipe}>
-      <CycleArrow direction = {"left"} onClick = {() => triggerCycle("left")}/>
+      <CycleArrow direction = {"left"} onClick = {() => triggerCycle("right")}/>
       <div className="content-blocks">
-        <SideItem content = {contentArray[leftIndex]}/>
+        <SideItem content = {contentArray[leftIndex]} onClick = {() => triggerCycle("right")}/>
         <CenterItem content = {contentArray[centerIndex]} handleModal = {handleModal}/>
-        <SideItem content = {contentArray[rightIndex]}/>
+        <SideItem content = {contentArray[rightIndex]} onClick = {() => triggerCycle("left")}/>
       </div>
       {modal ?
-        <Modal handleModal = {handleModal}></Modal> :
+        <Modal handleModal = {handleModal} content = {contentArray[centerIndex]}/>:
         <></>
       }
-      <CycleArrow direction={"right"} onClick = {() => triggerCycle("right")}/>
+      <CycleArrow direction={"right"} onClick = {() => triggerCycle("left")}/>
     </CarouselWrapper>
   );
 }

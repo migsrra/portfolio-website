@@ -1,17 +1,15 @@
 import ModalWrapper from "./styles/ModalWrapper";
 
-const Modal = ({handleModal}) => {
+const Modal = ({handleModal,content}) => {
   return (
     <ModalWrapper>
       <div onClick={() =>handleModal()} className="overlay"></div>
       <div className="modal-content">
-        <h2>Modal Content</h2>
+        <h2>{content.title}</h2>
+        <h3>{content.company}</h3>
+        <h4>{content.date}</h4>
         <p>
-          Ex labore officia eu nostrud quis elit adipisicing proident voluptate
-          consectetur enim magna dolor. Anim cupidatat exercitation in tempor.
-          Id adipisicing aute officia veniam amet enim labore ut. Quis irure
-          exercitation esse consectetur culpa enim nulla exercitation Lorem enim
-          consequat duis dolor.
+          {content.description}
         </p>
         <button onClick={handleModal} className="close-modal">X</button>
       </div>
