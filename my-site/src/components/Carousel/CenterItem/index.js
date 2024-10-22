@@ -1,8 +1,8 @@
 import CenterItemWrapper from "./styles/CenterItemWrapper"
 
-const CenterItem = ({content}) => {
+const CenterItem = ({content,handleModal}) => {
   return (
-    <CenterItemWrapper>
+    <CenterItemWrapper onClick = {() =>handleModal()}>
       <img src={require("../../../resources/" + content.logoLocation)} draggable="false" height = "50px" alt="logo"/>
       <p>{content.company}</p>
     </CenterItemWrapper>
