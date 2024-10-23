@@ -5,7 +5,6 @@ const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
   z-index: 1;
-  margin-bottom: 100px;
   border-bottom: 1px solid ${Constants.borderColor};
   
   .header{
