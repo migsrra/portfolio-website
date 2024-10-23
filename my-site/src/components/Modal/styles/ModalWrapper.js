@@ -33,16 +33,18 @@ const ModalWrapper = styled.div`
     min-width: 300px;
 
     h2{
+      margin-top: 8px;
       font-weight: bold;
       line-height: 24px;
       margin-bottom: 10px;
     }
     h3{
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-top: 8px;
     }
     h4{
-      margin-top: 0;
+    }
+    p{
+      margin-top: 16px;
     }
   }
 

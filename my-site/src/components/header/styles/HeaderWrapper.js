@@ -2,17 +2,25 @@ import styled from "styled-components";
 import Constants from "../../../utils/constants";
 
 const HeaderWrapper = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 100px;
+  border-bottom: 1px solid ${Constants.borderColor};
+  
   .header{
     font-family: 'Roboto Normal';
     font-weight: normal;
     font-weight: 500;
     font-size: 16px;
     box-sizing: border-box;
+    height: 60px;    
+    background-color: ${Constants.backgroundColor};
         
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 24px;
 
     a {
       color: ${Constants.headerTextColor};

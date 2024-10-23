@@ -13,16 +13,13 @@ import IndexWrapper from './indexWrapper.js';
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Header />}>
-          <Route index element = {<LandingPage />}/>
-          <Route path="contact" element = {<Contact />}/>
-          <Route path="*" element = {<NotFoundPage />}/>
-          <Route path="experience" element = {<Experience />}/>
-          <Route path="aboutme" element = {<AboutMe />}/>
-        </Route>
-      </Routes>
-      </BrowserRouter>
+      <Header />
+        <Routes><Route path="/" element = {<LandingPage />}/></Routes>
+        <Routes><Route path="/" element = {<Experience />}/></Routes>
+        <Routes><Route path="/" element = {<AboutMe />}/></Routes>
+        <Routes><Route path="/" element = {<Contact />}/></Routes>
+        <Routes><Route path="*" element = {<NotFoundPage />}/></Routes>
+    </BrowserRouter>
   )
 }
 

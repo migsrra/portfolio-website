@@ -6,7 +6,7 @@ const CarouselWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  gap: 8px;
+  gap: 16px;
   margin-top: 10px;
   user-select: none;
   width: 500px;

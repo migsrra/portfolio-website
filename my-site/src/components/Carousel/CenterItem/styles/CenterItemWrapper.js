@@ -7,13 +7,15 @@ const CenterItemWrapper = styled.div`
   height: 100%;
   
   img{
-    padding-top: 30px;
+    padding-top: 28px;
     transform: scale(150%);
-    padding-bottom: 10px;
+    margin-bottom: 18px;
+    margin-top: 8px;
   }
   p{
+    margin-top: 12px;
     font-size: 20px;
-    padding-bottom: 8px;
+    margin-bottom: 16px;
     text-align: center;
   }
 `

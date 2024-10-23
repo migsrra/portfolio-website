@@ -6,12 +6,19 @@ const ExperienceWrapper = styled.div`
   font-family: "Roboto Light";
   font-weight: normal;
   font-style: normal;
+  height: 990px;
+
   h1{
-    margin-bottom: 5px;
-    margin-top:0px;
+    margin-bottom: 13px;
+    margin-top: 24px;
+    margin-left: 24px;
+  }
+  .description{
+    margin-top: 8px;
+    padding-left: 24px;
   }
   .carousel-wrapper{
-    margin-top: 40px;
+    margin-top: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;

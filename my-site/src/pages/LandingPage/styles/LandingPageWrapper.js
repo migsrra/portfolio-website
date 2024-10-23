@@ -11,19 +11,21 @@ const LandingPageWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 70px 0 30px 0;
-  //border: 3px solid red;
+  height: 700px;
 
   .intro-text {
     h1 {
       font-size: 40px;
-      margin-bottom: 5px;
+      margin-bottom: 13px;
     }
     p {
+      margin-bottom: 8px;
       font-size: 20px;
     }
   }
 
   button {
+    margin-top: 8px;
     display: inline-block;
     color: ${Constants.textColor};
     font-size: 16px;
@@ -52,7 +54,7 @@ const LandingPageWrapper = styled.div`
       content: "\u2B9F";
       position: absolute;
       opacity: 0;
-      bottom: -30px;
+      bottom: -16px;
       left: 0;
       right: 0;
       transition: 0.5s;
