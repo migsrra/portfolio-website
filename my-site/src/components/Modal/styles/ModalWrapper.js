@@ -10,6 +10,7 @@ const ModalWrapper = styled.div`
   position: fixed;
   color: black;
   font-weight: 600;
+  z-index: 2;
   .overlay{
     width: 100vw;
     height: 100vh;
@@ -60,9 +61,6 @@ const ModalWrapper = styled.div`
     font-size: 18px;
   }
 
-  body.active-modal {
-    overflow-y: hidden;
-  }
 `;
 
 export default ModalWrapper;

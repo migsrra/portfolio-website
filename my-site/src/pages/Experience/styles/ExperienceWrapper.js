@@ -7,7 +7,7 @@ const ExperienceWrapper = styled.div`
   font-weight: normal;
   font-style: normal;
   height: 990px;
-
+  scroll-margin-top: 80px;
   h1{
     margin-bottom: 13px;
     margin-top: 24px;

@@ -9,9 +9,11 @@ const LandingPageWrapper = styled.div`
   text-align: center;
   padding: 70px 0 30px 0;
   height: 800px;
-
+  display: flex;
+  flex-direction: column;
+  
   .intro-text {
-    margin-top: 75px;
+    margin-top: 85px;
     h1 {
       font-size: 40px;
       margin-bottom: 13px;
@@ -19,6 +21,16 @@ const LandingPageWrapper = styled.div`
     p {
       margin-bottom: 8px;
       font-size: 20px;
+    }
+  }
+
+  .marquee{
+    margin-top: 85px;
+    width: 50vw;
+    align-self: center;
+    border-radius: 15px;
+    img{
+      padding: 20px;
     }
   }
 

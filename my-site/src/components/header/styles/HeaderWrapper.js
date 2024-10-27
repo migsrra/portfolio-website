@@ -2,9 +2,10 @@ import styled from "styled-components";
 import Constants from "../../../utils/constants";
 
 const HeaderWrapper = styled.header`
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   border-bottom: 1px solid ${Constants.borderColor};
   
   .header{

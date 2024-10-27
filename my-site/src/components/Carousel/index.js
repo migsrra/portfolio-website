@@ -5,6 +5,7 @@ import CycleArrow from "./CycleArrow";
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import Modal from "../Modal";
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 const Carousel = ({contentArray}) => {
   const [leftIndex, setLeftIndex] = useState(0);
@@ -23,9 +24,9 @@ const Carousel = ({contentArray}) => {
   }
 
   if(modal) {
-    document.body.classList.add('active-modal')
+    disableBodyScroll(document);
   } else {
-    document.body.classList.remove('active-modal')
+    enableBodyScroll(document);
   }
 
 
@@ -58,19 +59,21 @@ const Carousel = ({contentArray}) => {
   }
 
   return (
-    <CarouselWrapper {...handleSwipe}>
-      <CycleArrow direction = {"left"} onClick = {() => triggerCycle("right")}/>
-      <div className="content-blocks">
-        <SideItem content = {contentArray[leftIndex]} onClick = {() => triggerCycle("right")}/>
-        <CenterItem content = {contentArray[centerIndex]} handleModal = {handleModal}/>
-        <SideItem content = {contentArray[rightIndex]} onClick = {() => triggerCycle("left")}/>
-      </div>
+    <>
+      <CarouselWrapper {...handleSwipe}>
+        <CycleArrow direction = {"left"} onClick = {() => triggerCycle("right")}/>
+        <div className="content-blocks">
+          <SideItem content = {contentArray[leftIndex]} onClick = {() => triggerCycle("right")}/>
+          <CenterItem content = {contentArray[centerIndex]} handleModal = {handleModal}/>
+          <SideItem content = {contentArray[rightIndex]} onClick = {() => triggerCycle("left")}/>
+        </div>
+        <CycleArrow direction={"right"} onClick = {() => triggerCycle("left")}/>
+      </CarouselWrapper>
       {modal ?
         <Modal handleModal = {handleModal} content = {contentArray[centerIndex]}/>:
         <></>
       }
-      <CycleArrow direction={"right"} onClick = {() => triggerCycle("left")}/>
-    </CarouselWrapper>
+    </>
   );
 }
 
