@@ -47,6 +47,27 @@ const ModalWrapper = styled.div`
     p{
       margin-top: 16px;
     }
+    .tech-stack-imgs{
+      //border: 3px solid red;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .tech-stack-img{
+        //border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p{
+          margin-top: 5px;
+        }
+        img{
+          //border: 1px solid red;
+          height: 35px;
+        }
+      }
+    }
   }
 
   .close-modal {

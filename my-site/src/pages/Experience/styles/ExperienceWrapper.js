@@ -17,7 +17,7 @@ const ExperienceWrapper = styled.div`
     margin-top: 8px;
     padding-left: 24px;
   }
-  .carousel-wrapper{
+  .work-carousel-wrapper{
     margin-top: 60px;
     display: flex;
     flex-direction: column;

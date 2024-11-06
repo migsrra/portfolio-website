@@ -1,4 +1,5 @@
 import ModalWrapper from "./styles/ModalWrapper";
+import Content from "../../utils/content";
 
 const Modal = ({handleModal,content}) => {
   return (
@@ -12,6 +13,17 @@ const Modal = ({handleModal,content}) => {
           {content.description}
         </p>
         <button onClick={handleModal} className="close-modal">X</button>
+        <p>Tech Stack:</p>
+        <div className="tech-stack-imgs">
+          {
+            content.technologies.map((tech, i) => (
+              <div className="tech-stack-img">
+                <img src={require("../../resources/tech-stack-images/" + Content.TechLocationMappings[tech])} draggable="false" alt="tech-logo" key={i}/>
+                <p>{tech}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </ModalWrapper>
   );

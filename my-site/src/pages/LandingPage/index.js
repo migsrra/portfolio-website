@@ -5,6 +5,8 @@ import Content from '../../utils/content';
 
 
 const LandingPage = () =>{
+
+
   return (
     <>
     <LandingPageWrapper id="home">

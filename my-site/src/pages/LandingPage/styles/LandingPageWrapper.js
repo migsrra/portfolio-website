@@ -8,12 +8,12 @@ const LandingPageWrapper = styled.div`
   font-style: normal;
   text-align: center;
   padding: 70px 0 30px 0;
-  height: 800px;
+  height: 820px;
   display: flex;
   flex-direction: column;
   
   .intro-text {
-    margin-top: 85px;
+    margin-top: 140px;
     h1 {
       font-size: 40px;
       margin-bottom: 13px;
