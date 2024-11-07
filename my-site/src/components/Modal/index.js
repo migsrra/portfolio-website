@@ -17,7 +17,7 @@ const Modal = ({handleModal,content}) => {
         <div className="tech-stack-imgs">
           {
             content.technologies.map((tech, i) => (
-              <div className="tech-stack-img">
+              <div className="tech-stack-img" key={i}>
                 <img src={require("../../resources/tech-stack-images/" + Content.TechLocationMappings[tech])} draggable="false" alt="tech-logo" key={i}/>
                 <p>{tech}</p>
               </div>

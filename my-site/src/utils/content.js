@@ -5,7 +5,7 @@ const Content = {
       "company": "CloudClub",
       "logoLocation": "CloudClubLogo.svg",
       "date": "September 2023 - Present",
-      "description": "Lead the development of a web application and game titled GuessTheLocation.",
+      "description": "Built an interactive web app where users guess worldwide picture locations and engage with others through posts. Led both frontend and backend development with React, Node.js, Express.js, and MySQL. Designed and implemented REST APIs for seamless client-server communication. Integrated a Google Maps API-based interactive map and developed features to track user inputs and store data efficiently.",
       "technologies": ["React", "CSS", "Node.js", "Express.js", "MySQL"] 
     },
     {
@@ -13,7 +13,7 @@ const Content = {
       "company": "Manulife Financial",
       "logoLocation": "ManulifeLogo.png",
       "date": "May 2024 - April 2025",
-      "description": "Facilitated software development of HR Technology used by thousands of employees globally.",
+      "description": "Developed responsive web components and pages for the company intranet using React, CSS, and Adobe Experience Cloud Manager. Created secure REST APIs and event handlers on the backend with Java, MySQL, and Apache Sling. Built JavaScript scripts to standardize data used in company PowerBI dashboards, which are used by 40,000+ employees globally. Employed Agile methodologies and Jira for efficient development and deployment of new features.",
       "technologies": ["React", "JavaScript", "CSS", "Java", "MySQL", "AEM"]
     },
     {
@@ -21,7 +21,7 @@ const Content = {
       "company": "Spark Design Club",
       "logoLocation": "SparkLogo.png",
       "date": "September 2022 - September 2023",
-      "description": "Aided in the development of an Arduino arcade game.",
+      "description": "Designed and developed an interactive display game using Arduino, C++, and custom PCB circuitry. Debugged both software and hardware with tools like the Arduino serial monitor and digital multi-meters. Programmed various hardware components, including LEDs, motors, and buzzers, to create engaging interactive experiences.",
       "technologies": ["C/C++", "Arduino"]
     }
   ],

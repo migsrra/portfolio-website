@@ -6,12 +6,17 @@ import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import Modal from "../Modal";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { motion } from "framer-motion";
 
 const Carousel = ({contentArray}) => {
   const [leftIndex, setLeftIndex] = useState(0);
   const [centerIndex, setCenterIndex] = useState(1); //this will be the initial center item
   const [rightIndex, setRightIndex] = useState(2);
   const [modal, setModal] = useState(false);
+  const [moveRight, setMoveRight] = useState(null);
+
+  const MotionCenterItem = motion.create(CenterItem);
+  const MotionSideItem = motion.create(SideItem);
 
   const handleSwipe = useSwipeable({
     onSwipedLeft: () => triggerCycle("left"),
@@ -29,10 +34,10 @@ const Carousel = ({contentArray}) => {
     enableBodyScroll(document);
   }
 
-
   const triggerCycle = (direction) => {
     let contentArrLength = contentArray.length;
     if (direction === "left") {
+      setMoveRight(false);
       if (rightIndex === contentArrLength - 1) {
         setCenterIndex(rightIndex);
         setLeftIndex(centerIndex);
@@ -45,6 +50,7 @@ const Carousel = ({contentArray}) => {
       }
     } 
     else {
+      setMoveRight(true);
       if (leftIndex === 0) {
         setCenterIndex(leftIndex);
         setLeftIndex(contentArrLength - 1);
@@ -58,16 +64,52 @@ const Carousel = ({contentArray}) => {
     }
   }
 
+  const carouselVariants = {
+    initialLeft: { x: "-100%" },
+    initialRight: { x: "100%" },
+    center: { x: 0 },
+  };
+
+  const carouselTransition = {
+    type: "spring",
+    stiffness: 200,
+    damping: 25,
+  };
+
   return (
     <>
       <CarouselWrapper {...handleSwipe}>
-        <CycleArrow direction = {"left"} onClick = {() => triggerCycle("right")}/>
+        <CycleArrow direction = {"left"} onClick = {() => triggerCycle("left")}/>
         <div className="content-blocks">
-          <SideItem content = {contentArray[leftIndex]} onClick = {() => triggerCycle("right")}/>
-          <CenterItem content = {contentArray[centerIndex]} handleModal = {handleModal}/>
-          <SideItem content = {contentArray[rightIndex]} onClick = {() => triggerCycle("left")}/>
+          <MotionSideItem 
+            initial={moveRight ? "initialLeft" : "initialRight"}
+            animate="center"
+            exit= {moveRight ? "initialRight" : "initialLeft"}
+            variants={carouselVariants}
+            transition={carouselTransition}
+            content = {contentArray[leftIndex]} 
+            onClick = {() => triggerCycle("right")}
+          />
+          <MotionCenterItem 
+            initial={moveRight ? "initialLeft" : "initialRight"}
+            animate="center"
+            exit={moveRight ? "initialRight" : "initialLeft"}
+            variants={carouselVariants}
+            transition={carouselTransition}
+            content = {contentArray[centerIndex]} 
+            handleModal = {handleModal}
+          />
+          <MotionSideItem 
+            initial={moveRight ? "initialLeft" : "initialRight"}
+            animate="center"
+            exit={moveRight ? "initialRight" : "initialLeft"}
+            variants={carouselVariants}
+            transition={carouselTransition}
+            content = {contentArray[rightIndex]} 
+            onClick = {() => triggerCycle("left")}
+          />
         </div>
-        <CycleArrow direction={"right"} onClick = {() => triggerCycle("left")}/>
+        <CycleArrow direction={"right"} onClick = {() => triggerCycle("right")}/>
       </CarouselWrapper>
       {modal ?
         <Modal handleModal = {handleModal} content = {contentArray[centerIndex]}/>:
